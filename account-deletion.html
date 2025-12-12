@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Memorize</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Petit ajout CSS inline au cas où tu n'as pas de classe button */
+        .action-btn {
+            display: inline-block;
+            background-color: #e74c3c; /* Rouge pour une action destructrice */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .action-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    <script>
+        // Petit script simple pour gérer le switch de langue sans recharger la page
+        function switchLang(lang) {
+            document.querySelectorAll('[id^="content-"]').forEach(el => el.style.display = 'none');
+            document.getElementById('content-' + lang).style.display = 'block';
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+
+    <div style="margin-bottom: 20px;">
+        <a href="../index.html" style="font-size: 0.9em;">← Back to Home / Retour à l'accueil</a>
+    </div>
+    
+    <div class="lang-switch">
+        <span id="btn-en" class="lang-btn active" onclick="switchLang('en')" style="cursor:pointer;">English</span>
+        <span id="btn-fr" class="lang-btn" onclick="switchLang('fr')" style="cursor:pointer;">Français</span>
+    </div>
+
+    <div id="content-en">
+        <h1>Delete Account</h1>
+        
+        <div class="alert">
+            <strong>⚠️ Warning:</strong> Account deletion is permanent and cannot be undone.
+        </div>
+
+        <p>To delete your account and associated data, please email us at: <strong>guillaumekervran@gmail.com</strong></p>
+        
+        <p>Include in your email:</p>
+        <ul>
+            <li>Your registered email address</li>
+            <li>Subject line: <strong>"Account Deletion Request"</strong></li>
+        </ul>
+
+        <p>To make it easier, you can click the button below:</p>
+        
+        <a href="mailto:guillaumekervran@gmail.com?subject=Account%20Deletion%20Request&body=Hello,%0D%0A%0D%0APlease delete my Memorize account associated with this email address.%0D%0A%0D%0AThank you." class="action-btn">
+            Send Deletion Request Email
+        </a>
+
+        <p style="margin-top: 30px;">
+            We will process your request within <strong>30 days</strong> and confirm deletion by email.
+        </p>
+
+        <div class="footer">
+            &copy; 2025 Memorize by Guillaume Kervran. All rights reserved.
+        </div>
+    </div>
+
+    <div id="content-fr" style="display:none;">
+        <h1>Suppression de compte</h1>
+        
+        <div class="alert">
+            <strong>⚠️ Attention :</strong> La suppression du compte est définitive et irréversible.
+        </div>
+
+        <p>Pour supprimer votre compte et les données associées, veuillez nous envoyer un email à : <strong>guillaumekervran@gmail.com</strong></p>
+        
+        <p>Incluez dans votre email :</p>
+        <ul>
+            <li>Votre adresse email d'inscription</li>
+            <li>Objet du mail : <strong>"Account Deletion Request"</strong></li>
+        </ul>
+
+        <p>Pour faciliter la demande, vous pouvez cliquer sur le bouton ci-dessous :</p>
+        
+        <a href="mailto:guillaumekervran@gmail.com?subject=Account%20Deletion%20Request&body=Bonjour,%0D%0A%0D%0AMerci de supprimer mon compte Memorize associé à cette adresse email.%0D%0A%0D%0 Cordialement." class="action-btn">
+            Envoyer la demande de suppression
+        </a>
+
+        <p style="margin-top: 30px;">
+            Nous traiterons votre demande sous <strong>30 jours</strong> et confirmerons la suppression par email.
+        </p>
+
+        <div class="footer">
+            &copy; 2025 Memorize par Guillaume Kervran. Tous droits réservés.
+        </div>
+    </div>
+
+</body>
+</html>
