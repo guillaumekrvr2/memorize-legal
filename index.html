@@ -3,37 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales - Memorize</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Memorize App - Home</title>
+    
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        .hub-container { text-align: center; padding-top: 50px; }
-        .hub-btn { 
-            display: inline-block; 
-            background-color: #007AFF; 
-            color: white; 
-            padding: 15px 30px; 
-            border-radius: 8px; 
-            margin: 10px; 
-            text-decoration: none; 
-            font-weight: bold;
+        /* Styles spécifiques pour le switch de langue et les sections */
+        .content-section { display: none; }
+        .content-section.visible { display: block; }
+        
+        /* Style du bouton Contact sur l'accueil */
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid #eee;
         }
-        .hub-btn:hover { background-color: #0056b3; text-decoration: none; }
+        .action-button {
+            display: inline-block;
+            background-color: #007AFF;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px; /* Forme de pilule */
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .action-button:hover {
+            background-color: #0062cc;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <div class="hub-container">
-        <h1>Documents Légaux - Memorize</h1>
-        <p>Veuillez sélectionner un document / Please select a document :</p>
-        
-        <br>
-        
-        <a href="privacy/index.html" class="hub-btn">Politique de Confidentialité<br><small>Privacy Policy</small></a>
-        <a href="tos/index.html" class="hub-btn">Conditions d'Utilisation<br><small>Terms of Service</small></a>
-        
-        <br>
-        
-        <a href="account-deletion.html" class="hub-btn" style="background-color: #d9534f;">Suppression de compte<br><small>Delete Account</small></a>
 
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('fr')">Français</button>
     </div>
+
+    <div id="en" class="content-section visible">
+        <h1>Welcome to Memorize</h1>
+        
+        <p>The simplest way to memorize anything, right from your pocket.</p>
+
+        <div class="hero-section">
+            <h3>Need Help?</h3>
+            <p>Found a bug or have a feature request?</p>
+            <a href="contact.html" class="action-button">Contact Support</a>
+        </div>
+
+        <h2>Privacy & Terms</h2>
+        <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+
+        <div class="footer">
+            &copy; 2024 Memorize App. All rights reserved.
+        </div>
+    </div>
+
+    <div id="fr" class="content-section">
+        <h1>Bienvenue sur Memorize</h1>
+        
+        <p>La façon la plus simple de tout mémoriser, directement depuis votre poche.</p>
+
+        <div class="hero-section">
+            <h3>Besoin d'aide ?</h3>
+            <p>Vous avez trouvé un bug ou avez une suggestion ?</p>
+            <a href="contact.html" class="action-button">Contacter le Support</a>
+        </div>
+
+        <h2>Confidentialité & Conditions</h2>
+        <ul>
+            <li><a href="privacy.html">Politique de Confidentialité</a></li>
+            <li><a href="terms.html">Conditions d'Utilisation</a></li>
+        </ul>
+
+        <div class="footer">
+            &copy; 2024 Memorize App. Tous droits réservés.
+        </div>
+    </div>
+
+    <script>
+        // Détection automatique de la langue du navigateur au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('fr')) {
+                switchLang('fr');
+            }
+        });
+
+        function switchLang(lang) {
+            // 1. Cacher toutes les sections
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('visible'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+
+            // 2. Afficher la section demandée
+            document.getElementById(lang).classList.add('visible');
+            
+            // 3. Mettre à jour le bouton actif (visuel)
+            const buttons = document.querySelectorAll('.lang-btn');
+            if(lang === 'en') buttons[0].classList.add('active');
+            if(lang === 'fr') buttons[1].classList.add('active');
+        }
+    </script>
 </body>
 </html>
