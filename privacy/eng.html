@@ -20,6 +20,7 @@
     <div id="content-en">
         <h1>Privacy Policy</h1>
         <p><strong>Effective Date:</strong> November 10, 2025</p>
+        <p><strong>Last updated:</strong> August 13, 2026</p>
         
         <p>This privacy policy applies to the <strong>Memorize - Memory Training</strong> mobile application (hereinafter referred to as "the Application") developed by <strong>Guillaume Kervran</strong> (hereinafter referred to as "the Developer" or "we") as a freemium service. This application is provided "AS IS".</p>
 
@@ -61,30 +62,49 @@
             <li>Rounds completed: history of your training sessions</li>
         </ul>
 
-        <h4>1.2.3 Subscription Data</h4>
+        <h4>1.2.3 Optional Usage Analytics</h4>
+        <p>If you consent, we collect limited data to understand how Memorize is used and improve its user journeys:</p>
+        <ul>
+            <li>Opening the Application</li>
+            <li>Selected training discipline and mode</li>
+            <li>General training settings, such as duration or number of items</li>
+            <li>Progression between the memorization and recall stages</li>
+            <li>Training completion, score, memorization time, and whether a personal record was achieved</li>
+            <li>Display of the sign-up prompt and confirmation of sign-up</li>
+            <li>Authentication provider used</li>
+            <li>Application version, operating system, and general technical display characteristics</li>
+        </ul>
+        <p>Before you sign in, this data is associated with a random identifier generated for the installation. After you sign in, it may be associated with the pseudonymous identifier of your Memorize account. Events collected before sign-in may then be linked to the same journey.</p>
+        <p>We may also associate the sign-up date, authentication provider, and email confirmation status with this pseudonymous profile. The email address itself is not transmitted to the usage analytics service.</p>
+        <p>In this context, we never transmit your email address, first name, last name, username, the content of your answers, sequences to be memorized, or any other text you enter.</p>
+        <p>These analytics are disabled by default. They are activated only after you consent and can be disabled at any time from the settings, without losing any functionality.</p>
+
+        <h4>1.2.4 Subscription Data</h4>
         <ul>
             <li>Premium status: active subscriber or free user</li>
             <li>Subscription history: start dates, renewal, cancellation</li>
             <li>Subscription type: monthly or annual</li>
+            <li>Information required to verify purchases: product or offering purchased, receipt or transaction data provided by Apple or Google, expiration dates, and associated entitlements</li>
         </ul>
 
         <h3>1.3 Technical Identifiers</h3>
 <p>To ensure the proper functioning of the Application and manage your subscriptions, we collect only <strong>strictly necessary</strong> technical identifiers:</p>
 <ul>
-    <li><strong>IDFV (Identifier for Vendors on iOS):</strong> Used for technical account management and purchase restoration.</li>
-    <li><strong>Android ID (on Android):</strong> Used to identify your installation in order to secure access to your premium content.</li>
-    <li><strong>Installation ID:</strong> Internal technical identifier for data synchronization.</li>
+    <li><strong>Pseudonymous Memorize account identifier (UUID):</strong> generated when the account is created and used by Memorize to identify it. It is transmitted to RevenueCat to synchronize the subscription and, only with your consent, to the optional usage analytics service.</li>
+    <li><strong>Random RevenueCat identifier:</strong> when the subscription service is initialized before you sign in, RevenueCat generates and locally stores a random pseudonymous identifier. It may subsequently be linked to your account UUID to maintain continuity of your purchases and entitlements.</li>
+    <li><strong>Random usage analytics identifier:</strong> only if you consent to optional usage analytics, the SDK generates a random pseudonymous identifier on your device. After sign-in, it may be linked to your account UUID to maintain journey continuity. It is reset when you sign out.</li>
+    <li><strong>IDFV (Identifier for Vendors on iOS):</strong> this technical device identifier is automatically transmitted to RevenueCat as part of the operation of the purchase and subscription management service. It is not the IDFA advertising identifier.</li>
 </ul>
-<p>These identifiers allow us to link your purchases to your account, prevent fraud, and ensure the security of your data. <strong>We do not collect advertising identifiers (IDFA).</strong></p>
+<p>These identifiers are used only for the purposes specified above: identifying the account, maintaining subscription continuity and, with your consent, measuring use of the Application. Memorize does not collect or transmit IDFA, Google Advertising ID, or Android ID to its service providers.</p>
 
-        <h3>1.4 Permissions Requested by the Application</h3>
-        <p>To function properly, Memorize requests the following permissions on your device:</p>
-        <p><strong>Required permissions:</strong></p>
+        <h3>1.4 Technical Access and Application Permissions</h3>
+        <p>To operate correctly, Memorize uses the following technical access. Internal local storage and Internet connectivity do not trigger any sensitive permission request.</p>
+        <p><strong>Required Technical Access:</strong></p>
         <ul>
-            <li>Stockage: to save your game data in offline mode</li>
+            <li><strong>Internal local storage:</strong> used to retain certain preferences, your usage analytics choice, and temporary data required for the Application to operate. This private storage does not require access to your files, photos, or the device's shared storage.</li>
             <li>Internet: to sync your scores and connect to your account</li>
         </ul>
-        <p><strong>Permissions we NEVER request:</strong></p>
+        <p><strong>Sensitive Permissions We Do Not Request:</strong></p>
         <ul>
             <li>❌ Location / GPS</li>
             <li>❌ Camera</li>
@@ -118,7 +138,7 @@
             <li>Personalize your experience: adapt training content to your level</li>
             <li>Create leaderboards: generate public rankings based on performances</li>
             <li>Subscription management: process your payments and manage your premium status</li>
-            <li>Improve the Application: analyze usage to optimize features</li>
+            <li>Optional usage analytics: with your consent, understand the journeys used, identify where users leave those journeys, and improve the Application's features</li>
             <li>Ensure security: detect and prevent fraud, abuse, and violations of our terms of service</li>
             <li>Communication: send you important information about your account and the Application</li>
             <li>Technical support: resolve your issues and answer your questions</li>
@@ -137,11 +157,28 @@
     <li><a href="https://supabase.com/privacy">Supabase Privacy Policy</a></li>
 </ul>
 
-<h3>3.2 Payment Services</h3>
+<h3>3.2 Optional Usage Analytics Service</h3>
+<p><strong>PostHog (analysis of Application usage)</strong></p>
+<ul>
+    <li>Role: processor responsible for processing usage analytics data solely on our instructions</li>
+    <li>Activation: only after your explicit consent</li>
+    <li>Primary hosting: PostHog Cloud EU in Frankfurt, Germany</li>
+    <li>Data transmitted: pseudonymous identifier, events and properties described in section 1.2.3, Application version, operating system, and general technical display characteristics</li>
+    <li>Data excluded: email address, first name, last name, username, and entered content</li>
+    <li>The IP address is not retained and no geolocation is derived from it</li>
+    <li>Session recording, screenshots, and advertising tracking are disabled</li>
+    <li>Processing is governed by a data processing agreement</li>
+    <li><a href="https://posthog.com/privacy">PostHog Privacy Policy</a></li>
+</ul>
+
+<h3>3.3 Payment Services</h3>
 <p><strong>RevenueCat (subscription management)</strong></p>
 <ul>
     <li>Location: United States</li>
-    <li>Shared data: email, anonymized User ID, subscription status</li>
+    <li>Identifiers processed: a random pseudonymous identifier generated by RevenueCat before you sign in, followed by the pseudonymous identifier of your Memorize account (UUID) after you sign in; these identifiers may be linked to maintain subscription continuity</li>
+    <li>Purchase and subscription data: product or offering purchased, receipt or transaction data provided by Apple or Google, history, status, expiration dates, and entitlements</li>
+    <li>Purposes: verifying and restoring purchases, synchronizing the subscription, and enabling premium features</li>
+    <li>Memorize does not transmit any email address, first name, last name, or advertising identifier to RevenueCat</li>
     <li><a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a></li>
 </ul>
 
@@ -152,10 +189,10 @@
     <li>These platforms apply their own privacy policies</li>
 </ul>
 
-        <h3>3.3 Communication Services (future)</h3>
+        <h3>3.4 Communication Services (future)</h3>
         <p>We plan to use emailing services for transactional and marketing communications (with your consent). You will be informed and can unsubscribe at any time.</p>
 
-        <h3>3.4 Legal Disclosure</h3>
+        <h3>3.5 Legal Disclosure</h3>
         <p>We may disclose your information if required by law, legal proceedings, government requests, or to protect our rights and safety.</p>
 
         <h2>4. Your Rights (GDPR)</h2>
@@ -168,7 +205,12 @@
             <li><strong>Right to Object and Restriction.</strong></li>
         </ul>
 
-        <h3>Right to Erasure ("right to be forgotten")</h3>
+        <h3>4.1 Optional Usage Analytics</h3>
+        <p>You may withdraw your consent at any time from <em>Profile &gt; Settings &gt; Optional usage analytics</em>. Withdrawal applies to future collection and does not limit any Application functionality.</p>
+        <p>Withdrawing consent does not automatically delete data already collected. To request access to or deletion of this data without deleting your account, contact us at <a href="mailto:guillaumekervran@gmail.com">guillaumekervran@gmail.com</a>.</p>
+        <p>When you delete your account from the Application, usage analytics data associated with your account's pseudonymous identifier is also scheduled for deletion by our processor. This deletion may require technical processing time.</p>
+
+        <h3>4.2 Right to Erasure ("right to be forgotten")</h3>
         <p>How to delete your account:</p>
         <ul>
             <li>In the Application: <em>From the homepage of the application, while being connected > Profile > Manage my profile > Delete my account</em></li>
@@ -177,11 +219,14 @@
         <p>When you delete your account, we delete all your personal data, scores, history, and credentials.</p>
         
         <div class="alert">
-            <strong>⚠️ Warning:</strong> Deletion is irreversible and effective within 30 days maximum. During this period, your account is deactivated but can still be restored upon request.
+            <strong>⚠️ Warning:</strong> Account deletion is irreversible. Some deletions by our service providers may be processed asynchronously and require technical processing time. The account cannot be restored after deletion has been confirmed.
         </div>
         <div class="alert">
             <strong>⚠️ Important regarding active subscriptions:</strong> Deleting your account does NOT automatically cancel your subscription. You must cancel it separately through your App Store or Google Play Store settings, otherwise you will continue to be charged.
         </div>
+
+        <h3>4.3 Exercising Your Rights</h3>
+        <p>To exercise any of these rights, contact us at <a href="mailto:guillaumekervran@gmail.com">guillaumekervran@gmail.com</a>. We will respond within 30 days.</p>
 
         <h2>5. Data Retention</h2>
         <ul>
@@ -213,11 +258,15 @@
 <p><strong>Primary Storage</strong><br>
 Your personal data is stored on servers located in France (Paris region - eu-west-3) via the Supabase/AWS infrastructure.</p>
 
+<p><strong>Optional usage analytics</strong><br>
+When you consent, the usage analytics data described in section 1.2.3 is primarily hosted by PostHog Cloud EU in Frankfurt, Germany. It is associated with pseudonymous identifiers rather than your email address or name.</p>
+
 <p><strong>Limited Transfers to the United States</strong><br>
-Only specific subscription-related data is transferred to the United States:</p>
+Some of our service providers may process data in the United States under the conditions described below:</p>
 <ul>
-    <li><strong>RevenueCat:</strong> email, anonymized user ID, subscription status, subscription history</li>
-    <li>This data is necessary to manage your subscriptions and process payments via Apple and Google</li>
+    <li><strong>RevenueCat:</strong> a random pseudonymous RevenueCat identifier or the pseudonymous Memorize account identifier (UUID), and purchase and subscription information, including the product or offering purchased, receipt or transaction data provided by Apple or Google, history, status, expiration dates, and entitlements</li>
+    <li>This data is necessary to verify and restore purchases, synchronize the subscription, and enable premium features; Memorize does not transmit any email address, first name, last name, or advertising identifier to RevenueCat</li>
+    <li><strong>PostHog:</strong> although usage analytics data is primarily hosted in the European Union, PostHog and some of its subprocessors may carry out limited processing outside the European Economic Area, including in the United States, to provide, secure, and support the service. This processing remains limited to the pseudonymous data described in this policy.</li>
 </ul>
 
 <h3>8.2 Protection Guarantees</h3>
@@ -227,33 +276,43 @@ Only specific subscription-related data is transferred to the United States:</p>
 <ul>
     <li>We use Standard Contractual Clauses approved by the European Commission</li>
     <li>These clauses guarantee a level of protection equivalent to the European GDPR</li>
+    <li>The DPA signed with PostHog incorporates the Standard Contractual Clauses adopted by the European Commission, with Memorize as controller and PostHog as processor. RevenueCat's DPA also provides for the application of the Standard Contractual Clauses to the relevant transfers.</li>
 </ul>
 
 <p><strong>Security Certifications</strong></p>
 <ul>
-    <li>Our service providers comply with international standards: SOC 2 Type II, ISO 27001</li>
-    <li>AWS (Supabase infrastructure): ISO 27001, SOC 1/2/3 certifications, GDPR compliance</li>
+    <li>PostHog products are covered by a SOC 2 Type II report following an independent audit</li>
+    <li>RevenueCat states that it undergoes an annual SOC 2 Type II audit</li>
+    <li>AWS, used for the Supabase and RevenueCat infrastructure, holds certifications including ISO 27001 and provides SOC 1, SOC 2, and SOC 3 reports</li>
+    <li>These certifications and reports cover the controls of the relevant service providers; they do not replace our own security and GDPR compliance obligations</li>
 </ul>
 
 <p><strong>Data Privacy Framework (DPF)</strong></p>
 <ul>
     <li>RevenueCat participates in the EU-US Data Privacy Framework, offering additional guarantees for EU-US transfers</li>
+    <li>PostHog states that it participates in the EU-US Data Privacy Framework, its UK Extension, and the Swiss-US Data Privacy Framework. Its DPA provides that the Standard Contractual Clauses also remain applicable and that an alternative transfer solution must be used if this mechanism ceases to be valid.</li>
     <li><a href="https://www.dataprivacyframework.gov/s/">Verify DPF certification</a></li>
 </ul>
 
 <h3>8.3 Data Minimization</h3>
 <p>We minimize international transfers to the maximum extent possible:</p>
 <ul>
-    <li>95% of your data remains in France (all your training data, statistics, profile)</li>
-    <li>Only data strictly necessary for subscriptions is transferred</li>
+    <li>Account, profile, and training data is primarily hosted in France, while optional usage analytics data is primarily hosted in the European Union</li>
+    <li>We configure each service to limit transmitted data to what is strictly necessary for its purpose</li>
+    <li>Data transmitted to PostHog is limited to pseudonymous identifiers and the events described in section 1.2.3; no email address, name, or entered content is transmitted</li>
+    <li>Data transmitted to the subscription management service is limited to the account's pseudonymous identifier and the information necessary to manage purchase entitlements and subscription status</li>
+    <li>No advertising identifier, entered training content, or bank payment data is transmitted to these services</li>
 </ul>
 
 <h3>8.4 Your Rights</h3>
 <p>You retain all your GDPR rights regarding your data, including data transferred outside the EU:</p>
 <ul>
-    <li>Right to access, rectification, deletion</li>
-    <li>Right to object to international transfers (may limit certain features)</li>
+    <li>Right to be informed of the destination countries and the safeguards governing transfers</li>
+    <li>Right to obtain information about the applicable appropriate safeguards, including the Standard Contractual Clauses</li>
+    <li>Right of access, rectification, erasure, restriction, objection to processing where the legal conditions are met, and data portability</li>
+    <li>Right to withdraw your consent to optional usage analytics at any time</li>
     <li>Right to lodge a complaint with the competent data protection authority (CNIL)</li>
+    <li>Right, where applicable, to exercise the remedies provided by the relevant transfer mechanisms</li>
 </ul>
 <p>For any questions, contact us: <a href="mailto:guillaumekervran@gmail.com">guillaumekervran@gmail.com</a></p>
 
@@ -276,14 +335,24 @@ Only specific subscription-related data is transferred to the United States:</p>
 
 <h3>10.1 Storage on Your Device</h3> <p>The Application stores certain data directly on your device to enhance your experience:</p> <ul> <li><strong>Authentication Token</strong>: stored securely (Keychain on iOS, Keystore on Android) to maintain your logged-in session</li> <li><strong>User Preferences</strong>: language, theme, training settings</li> <li><strong>Temporary Cache</strong>: recent training results for offline viewing (automatically cleared after 7 days)</li> </ul> <p>This data remains on your device and is only synchronized with our servers when necessary.</p>
 
-<h3>10.2 No Advertising Tracking</h3> <p>The Application does not contain any advertising tracking technology:</p> <ul> <li>No web cookies</li> <li>No cross-app tracking</li> <li>No behavioral profiling</li> <li>No third-party advertising</li> </ul>
+<h3>10.2 Usage Analytics and No Advertising Tracking</h3>
+<p>The Application does not contain any advertising tracking technology:</p>
+<ul>
+    <li>No advertising identifiers</li>
+    <li>No third-party advertising</li>
+    <li>No tracking of your activity across different applications or websites</li>
+    <li>No sale of data</li>
+    <li>No session recording or screenshots</li>
+</ul>
+<p>The optional usage analytics described in this policy is used exclusively to understand journeys within Memorize and improve the Application. It is disabled by default and operates only after your explicit consent.</p>
+<p>It is not used to display advertising, create an advertising profile, make automated decisions about you, or track your activity outside Memorize.</p>
 
 <h3>10.3 Management of Local Data</h3> <p>You can clear locally stored data at any time:</p> <ul> <li><strong>Logging out</strong>: clears the authentication token</li> <li><strong>Deleting the Application</strong>: permanently clears all local data</li> </ul>
 
         <h2>11. Communications</h2> <p>With your consent, we may send you informative emails regarding:</p> <ul> <li>New features of Memorize</li> <li>Tips on memorization techniques</li> <li>Competitions and community challenges</li> </ul> <p>You can unsubscribe at any time via the link in each email or in the Application settings.</p> <p><strong>We do not send any third-party advertising.</strong></p>
 
         <h2>12. Changes to This Policy</h2>
-        <p>We may update this policy. Significant changes will be notified via the App or email. Continued use constitutes acceptance.</p>
+        <p>We may update this policy. We will notify you of any significant change through the Application or by email. When a change requires renewed consent, we will ask you to make a new choice before activating the relevant processing.</p>
 
         <h2>13. Legal Basis for Processing (GDPR)</h2>
         <table>
@@ -314,6 +383,10 @@ Only specific subscription-related data is transferred to the United States:</p>
                     <td>Security and fraud</td>
                     <td>Legitimate interest</td>
                 </tr>
+                <tr>
+                    <td>Optional usage analytics</td>
+                    <td>Consent — Article 6(1)(a) GDPR</td>
+                </tr>
             </tbody>
         </table>
 
@@ -326,21 +399,23 @@ Only specific subscription-related data is transferred to the United States:</p>
         <p>You have the right to file a complaint with the CNIL (https://www.cnil.fr/).</p>
 
         <h2>15. Consent</h2>
-        <p>By using the Memorize Application, you consent to the processing of your information as described in this Privacy Policy.</p>
+        <p>The general operation of Memorize does not rely on blanket consent to all processing described in this policy. Each processing activity relies on the legal basis specified in section 13.</p>
+        <p>Optional usage analytics is activated only after you make an explicit choice. You may decline it without losing any functionality and withdraw your consent at any time from the Application settings.</p>
+        <p>Withdrawing consent stops future collection for these usage analytics. It does not affect the lawfulness of processing carried out before the withdrawal.</p>
 
         <h2>16. Key Points Summary</h2>
         <ul>
-            <li><strong>Global accessibility:</strong> Accessible worldwide, US hosting with GDPR safeguards.</li>
+            <li><strong>Hosting:</strong> Account, profile, and training data is primarily hosted in France. Optional usage analytics is primarily hosted in the European Union. Some limited processing may take place in the United States under the safeguards described in this policy.</li>
             <li><strong>Security:</strong> Strong encryption, no data selling.</li>
             <li><strong>Public data:</strong> Username and scores are public.</li>
             <li><strong>Subscriptions:</strong> Managed via Stores, cancel anytime.</li>
-            <li><strong>Permissions:</strong> Storage and Internet only.</li>
+            <li><strong>Permissions:</strong> No sensitive permission is requested; preferences and temporary data are retained in the Application's private local storage.</li>
         </ul>
 
         <h2>17. Data Safety Compliance Statement</h2>
-        <p>This policy corresponds to declarations made in Google Play Data Safety form and Apple's App Privacy Report. Updates to practices will be reflected here and in stores within 30 days.</p>
+        <p>This policy will serve as the reference for the next update of the Google Play Data Safety and Apple App Privacy disclosures. Those disclosures must remain consistent with the practices described in this document and be updated whenever those practices change.</p>
 
         <div class="footer">
-            &copy; 2025 Memorize by Guillaume Kervran. All rights reserved.
+            &copy; 2026 Memorize by Guillaume Kervran. All rights reserved.
         </div>
     </div>
